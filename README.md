@@ -1,6 +1,8 @@
 # Si
 
-**TODO: Add description**
+The library implements quantities and units which included to basic SI.
+
+The **[International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units)**, internationally known by the abbreviation SI (from French Système International), is the modern form of the [metric system](https://en.wikipedia.org/wiki/Metric_system) and the world's most widely used [system of measurement](https://en.wikipedia.org/wiki/System_of_measurement). Established and maintained by the [General Conference on Weights and Measures](https://en.wikipedia.org/wiki/General_Conference_on_Weights_and_Measures), it is the only system of measurement with an official status in nearly every country in the world, employed in science, technology, industry, and everyday commerce.
 
 ## Installation
 
