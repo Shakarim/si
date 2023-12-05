@@ -254,25 +254,25 @@ Every single basic unit by default has "prefixed" definitions.
 
 #### Example for `SI.Unit.Gram`
 
-| Module            | Name      | Symbol | Multiplier       | 
-|-------------------|-----------|--------|------------------| 
-| SI.Unit.Exagram   | exagram   | `:Eg`  | 10<sup>18</sup>  |
-| SI.Unit.Petagram  | petagram  | `:Pg`  | 10<sup>15</sup>  |
-| SI.Unit.Teragram  | teragram  | `:Tg`  | 10<sup>12</sup>  |
-| SI.Unit.Gigagram  | gigagram  | `:Gg`  | 10<sup>9</sup>   |
-| SI.Unit.Megagram  | megagram  | `:Mg`  | 10<sup>6</sup>   |
-| SI.Unit.Kilogram  | kilogram  | `:kg`  | 10<sup>3</sup>   |
-| SI.Unit.Hectogram | hectogram | `:hg`  | 10<sup>2</sup>   |
-| SI.Unit.Decagram  | decagram  | `:dag` | 10<sup>1</sup>   |
-| SI.Unit.Gram      | gram      | `:dag` | 10<sup>0</sup>   |
-| SI.Unit.Decigram  | decigram  | `:dg`  | 10<sup>-1</sup>  |
-| SI.Unit.Centigram | centigram | `:cg`  | 10<sup>-2</sup>  |
-| SI.Unit.Milligram | milligram | `:mg`  | 10<sup>-3</sup>  |
-| SI.Unit.Microgram | microgram | `:ug`  | 10<sup>-6</sup>  |
-| SI.Unit.Nanogram  | nanogram  | `:ng`  | 10<sup>-9</sup>  |
-| SI.Unit.Picogram  | picogram  | `:pg`  | 10<sup>-12</sup> |
-| SI.Unit.Femtogram | femtogram | `:fg`  | 10<sup>-15</sup> |
-| SI.Unit.Attogram  | attogram  | `:ag`  | 10<sup>-18</sup> |
+| Module              | Name      | Symbol | Multiplier       | 
+|---------------------|-----------|--------|------------------| 
+| `SI.Unit.Exagram`   | exagram   | `:Eg`  | 10<sup>18</sup>  |
+| `SI.Unit.Petagram`  | petagram  | `:Pg`  | 10<sup>15</sup>  |
+| `SI.Unit.Teragram`  | teragram  | `:Tg`  | 10<sup>12</sup>  |
+| `SI.Unit.Gigagram`  | gigagram  | `:Gg`  | 10<sup>9</sup>   |
+| `SI.Unit.Megagram`  | megagram  | `:Mg`  | 10<sup>6</sup>   |
+| `SI.Unit.Kilogram`  | kilogram  | `:kg`  | 10<sup>3</sup>   |
+| `SI.Unit.Hectogram` | hectogram | `:hg`  | 10<sup>2</sup>   |
+| `SI.Unit.Decagram`  | decagram  | `:dag` | 10<sup>1</sup>   |
+| `SI.Unit.Gram`      | gram      | `:dag` | 10<sup>0</sup>   |
+| `SI.Unit.Decigram`  | decigram  | `:dg`  | 10<sup>-1</sup>  |
+| `SI.Unit.Centigram` | centigram | `:cg`  | 10<sup>-2</sup>  |
+| `SI.Unit.Milligram` | milligram | `:mg`  | 10<sup>-3</sup>  |
+| `SI.Unit.Microgram` | microgram | `:ug`  | 10<sup>-6</sup>  |
+| `SI.Unit.Nanogram`  | nanogram  | `:ng`  | 10<sup>-9</sup>  |
+| `SI.Unit.Picogram`  | picogram  | `:pg`  | 10<sup>-12</sup> |
+| `SI.Unit.Femtogram` | femtogram | `:fg`  | 10<sup>-15</sup> |
+| `SI.Unit.Attogram`  | attogram  | `:ag`  | 10<sup>-18</sup> |
 
 Every "prefixed" unit has been created using multiplier module
 
