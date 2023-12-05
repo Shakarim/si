@@ -31,9 +31,7 @@ defmodule SI.MixProject do
 
   defp description() do
     ~S"""
-    The library, implements modules and structs for work with SI system.
-
-    The International System of Units, internationally known by the abbreviation SI (from French Système International), is the modern form of the metric system and the world's most widely used system of measurement. Established and maintained by the General Conference on Weights and Measures, it is the only system of measurement with an official status in nearly every country in the world, employed in science, technology, industry, and everyday commerce.
+    The library, implements modules and structs for work with `The International System of Units`.
     """
   end
 
