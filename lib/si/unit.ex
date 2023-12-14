@@ -127,6 +127,34 @@ defmodule SI.Unit do
       )
     end
   end
+  defmacro compile_derivative_units(arg, do: do_block) do
+    base_module = Macro.expand(arg, __CALLER__)
+    generating_units = Enum.map(
+      @multipliers,
+      fn {_multiplier_symbol, multiplier_module} ->
+        {
+          unit_module_name(base_module, multiplier_module),
+          symbol: derivative_symbol(base_module, multiplier_module),
+          name: derivative_name(base_module, multiplier_module)
+        }
+      end
+    )
+    quote do
+      Enum.map(
+        unquote(generating_units),
+        fn {module_name, opts} ->
+          defmodule module_name do
+            alias SI.Unit
+            use Unit,
+                name: opts[:name],
+                symbol: opts[:symbol]
+
+            unquote(do_block)
+          end
+        end
+      )
+    end
+  end
 
   @spec generate_module_variations(atom()) :: [{symbol :: atom(), module :: atom()}]
   def generate_module_variations(basic_module) do
