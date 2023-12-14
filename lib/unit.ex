@@ -74,17 +74,45 @@ defmodule SI.Unit do
     end
   end
 
-  defmacro compile_protocol_impl(module, for, multiplier) do
+  defmacro compile_variation_conversions(arg) do
+    base_module = Macro.expand(arg, __CALLER__)
+    basic_unit = [{base_module, 0}]
+    derivative_units = Enum.map(
+      @multipliers,
+      fn {_multiplier_symbol, multiplier_module} ->
+        module = unit_module_name(base_module, multiplier_module)
+        {module, multiplier_module.value}
+      end
+    )
+    conversion_data = basic_unit ++ derivative_units
+
     quote do
-      defimpl :"#{unquote(module)}.Converter", for: unquote(for) do
-        @multiplier unquote(multiplier)
-        @module unquote(module)
-        def create(%_{value: value}), do: %{__struct__: @module, value: value * @multiplier}
+      for {first, first_m} <- unquote(conversion_data), {second, second_m} <- unquote(conversion_data), into: [] do
+        if (first !== second) do
+          multiplier = 1/:math.pow(10, first_m - second_m)
+
+          defimpl :"#{first}.Converter", for: second do
+            @multiplier multiplier
+            @module first
+            def create(%_{value: value}), do: %{__struct__: @module, value: value * @multiplier}
+          end
+        end
       end
     end
   end
 
-  defmacro compile_derivative_units(generating_units) do
+  defmacro compile_derivative_units(arg) do
+    base_module = Macro.expand(arg, __CALLER__)
+    generating_units = Enum.map(
+      @multipliers,
+      fn {_multiplier_symbol, multiplier_module} ->
+        {
+          unit_module_name(base_module, multiplier_module),
+          symbol: derivative_symbol(base_module, multiplier_module),
+          name: derivative_name(base_module, multiplier_module)
+        }
+      end
+    )
     quote do
       Enum.map(
         unquote(generating_units),
@@ -100,24 +128,25 @@ defmodule SI.Unit do
     end
   end
 
-  @spec generate_derivative_list(atom()) :: [{atom(), keyword()}]
-  def generate_derivative_list(basic_module) do
-    Enum.map(@multipliers, fn {_multiplier_symbol, multiplier_module} ->
+  @spec generate_module_variations(atom()) :: [{symbol :: atom(), module :: atom()}]
+  def generate_module_variations(basic_module) do
+    basic = [{basic_module.symbol(), basic_module}]
+    derivatives = Enum.map(@multipliers, fn {_multiplier_symbol, multiplier_module} ->
       {
-        unit_module_name(basic_module, multiplier_module),
-        symbol: derivative_symbol(basic_module, multiplier_module),
-        name: derivative_name(basic_module, multiplier_module),
-        multiplier: multiplier_module,
-        for: basic_module
+        derivative_symbol(basic_module, multiplier_module),
+        unit_module_name(basic_module, multiplier_module)
       }
     end)
+
+    basic ++ derivatives
   end
 
+
   @spec derivative_symbol(atom(), atom()) :: atom()
-  def derivative_symbol(original_module, multiplier_module), do: :"#{multiplier_module.symbol()}#{original_module.symbol()}"
+  defp derivative_symbol(original_module, multiplier_module), do: :"#{multiplier_module.symbol()}#{original_module.symbol()}"
 
   @spec derivative_name(atom(), atom()) :: binary()
-  def derivative_name(original_module, multiplier_module), do: "#{multiplier_module.name()}#{original_module.name()}"
+  defp derivative_name(original_module, multiplier_module), do: "#{multiplier_module.name()}#{original_module.name()}"
 
   @spec unit_module_name(atom(), atom()) :: atom()
   defp unit_module_name(original_module, multiplier_module)

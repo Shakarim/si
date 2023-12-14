@@ -31,111 +31,33 @@ defmodule SI do
   ]
 
   # === UNITS ===
+  @units {Mass.symbol(), Unit.generate_module_variations(Gram)}
+  Unit.compile_derivative_units(Gram)
+  Unit.compile_variation_conversions(Gram)
 
-  # GRAM
-  derivative_modules = Unit.generate_derivative_list(Gram)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Gram.symbol(), Gram}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {Mass.symbol(), units}
-  # protocols
-  multiplier_list = [{Gram, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {AmountOfSubstance.symbol(), Unit.generate_module_variations(Mole)}
+  Unit.compile_derivative_units(Mole)
+  Unit.compile_variation_conversions(Mole)
 
-  # MOLE
-  derivative_modules = Unit.generate_derivative_list(Mole)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Mole.symbol(), Mole}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {AmountOfSubstance.symbol(), units}
-  # protocols
-  multiplier_list = [{Mole, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {ElectricCurrent.symbol(), Unit.generate_module_variations(Ampere)}
+  Unit.compile_derivative_units(Ampere)
+  Unit.compile_variation_conversions(Ampere)
 
-  # AMPERE
-  derivative_modules = Unit.generate_derivative_list(Ampere)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Ampere.symbol(), Ampere}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {ElectricCurrent.symbol(), units}
-  # protocols
-  multiplier_list = [{Ampere, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {Length.symbol(), Unit.generate_module_variations(Meter)}
+  Unit.compile_derivative_units(Meter)
+  Unit.compile_variation_conversions(Meter)
 
-  # METER
-  derivative_modules = Unit.generate_derivative_list(Meter)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Meter.symbol(), Meter}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {Length.symbol(), units}
-  # protocols
-  multiplier_list = [{Meter, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {LuminousIntensity.symbol(), Unit.generate_module_variations(Candela)}
+  Unit.compile_derivative_units(Candela)
+  Unit.compile_variation_conversions(Candela)
 
-  # CANDELA
-  derivative_modules = Unit.generate_derivative_list(Candela)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Candela.symbol(), Candela}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {LuminousIntensity.symbol(), units}
-  # protocols
-  multiplier_list = [{Candela, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {ThermodynamicTemperature.symbol(), Unit.generate_module_variations(Kelvin)}
+  Unit.compile_derivative_units(Kelvin)
+  Unit.compile_variation_conversions(Kelvin)
 
-  # KELVIN
-  derivative_modules = Unit.generate_derivative_list(Kelvin)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Kelvin.symbol(), Kelvin}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {ThermodynamicTemperature.symbol(), units}
-  # protocols
-  multiplier_list = [{Kelvin, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
-
-  # SECOND
-  derivative_modules = Unit.generate_derivative_list(Second)
-  formatted_derivative_modules = Enum.map(derivative_modules, fn {module, opts} -> {opts[:symbol], module} end)
-  units = [{Second.symbol(), Second}] ++ formatted_derivative_modules
-  Unit.compile_derivative_units(derivative_modules)
-  @units {Time.symbol(), units}
-  # protocols
-  multiplier_list = [{Second, 0}] ++ Enum.map(derivative_modules, fn {module, opts} -> {module, opts[:multiplier].value} end)
-  for {first, first_m} <- multiplier_list, {second, second_m} <- multiplier_list, into: [] do
-    if (first !== second) do
-      multiplier = 1/:math.pow(10, first_m - second_m)
-      Unit.compile_protocol_impl(first, second, multiplier)
-    end
-  end
+  @units {Time.symbol(), Unit.generate_module_variations(Second)}
+  Unit.compile_derivative_units(Second)
+  Unit.compile_variation_conversions(Second)
 
   # === FUNCTIONS ===
 
