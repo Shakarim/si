@@ -53,12 +53,12 @@ defmodule SI.Unit do
       @enforce_keys [:value]
       defstruct [value: nil]
 
-      defprotocol Converter, do: Protocol.def(create(term))
-      defimpl Converter, for: Float do
+      defprotocol Generator, do: Protocol.def(create(term))
+      defimpl Generator, for: Float do
         @module module
         def create(term), do: %{__struct__: @module, value: term}
       end
-      defimpl Converter, for: Integer do
+      defimpl Generator, for: Integer do
         @module module
         def create(term), do: %{__struct__: @module, value: term/1}
       end
@@ -70,7 +70,7 @@ defmodule SI.Unit do
       def symbol, do: @symbol
 
       @spec create(term()) :: term()
-      def create(from), do: __MODULE__.Converter.create(from)
+      def create(from), do: __MODULE__.Generator.create(from)
     end
   end
 
@@ -91,7 +91,7 @@ defmodule SI.Unit do
         if (first !== second) do
           multiplier = 1/:math.pow(10, first_m - second_m)
 
-          defimpl :"#{first}.Converter", for: second do
+          defimpl :"#{first}.Generator", for: second do
             @multiplier multiplier
             @module first
             def create(%_{value: value}), do: %{__struct__: @module, value: value * @multiplier}
