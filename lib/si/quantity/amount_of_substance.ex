@@ -3,7 +3,7 @@ defmodule SI.Quantity.AmountOfSubstance do
 
   use SI.Quantity,
       name: "amount of substance",
-      symbol: :n,
+      symbol: "n",
       unit: SI.Unit.Mole
 
 end

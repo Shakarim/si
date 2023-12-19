@@ -3,6 +3,6 @@ defmodule SI.Quantity.ElectricCurrent do
 
   use SI.Quantity,
       name: "electric current",
-      symbol: :I,
+      symbol: "I",
       unit: SI.Unit.Ampere
 end

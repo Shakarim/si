@@ -3,6 +3,6 @@ defmodule SI.Quantity.LuminousIntensity do
 
   use SI.Quantity,
       name: "luminous intensity",
-      symbol: :lv,
+      symbol: "lv",
       unit: SI.Unit.Candela
 end

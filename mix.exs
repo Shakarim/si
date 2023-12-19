@@ -5,7 +5,7 @@ defmodule SI.MixProject do
     [
       app: :si,
       name: "SI",
-      version: "1.3.0",
+      version: "1.4.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),

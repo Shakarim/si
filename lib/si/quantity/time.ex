@@ -3,6 +3,6 @@ defmodule SI.Quantity.Time do
 
   use SI.Quantity,
       name: "time",
-      symbol: :t,
+      symbol: "t",
       unit: SI.Unit.Second
 end

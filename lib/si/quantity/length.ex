@@ -3,6 +3,6 @@ defmodule SI.Quantity.Length do
 
   use SI.Quantity,
       name: "length",
-      symbol: :l,
+      symbol: "l",
       unit: SI.Unit.Meter
 end

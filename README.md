@@ -12,7 +12,7 @@ by adding `si` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:si, "~> 1.3"}
+    {:si, "~> 1.4"}
   ]
 end
 ```
@@ -72,13 +72,13 @@ Basically `SI` provides 7 quantities and 7 basic units for them.
 ### Quantities and they inits
 | Name                      | Typical symbol | Module           |
 |---------------------------|----------------|------------------|
-| time                      | `:t`           | SI.Unit.Second   |
-| length                    | `:l`           | SI.Unit.Meter    |
-| mass                      | `:m`           | SI.Unit.Kilogram |
-| electric current          | `:I`           | SI.Unit.Ampere   |
-| thermodynamic temperature | `:T`           | SI.Unit.Kelvin   |
-| amount of substance       | `:n`           | SI.Unit.Mole     |
-| luminous intensity        | `:lv`          | SI.Unit.Candela  |
+| time                      | `t`            | SI.Unit.Second   |
+| length                    | `l`            | SI.Unit.Meter    |
+| mass                      | `m`            | SI.Unit.Kilogram |
+| electric current          | `I`            | SI.Unit.Ampere   |
+| thermodynamic temperature | `T`            | SI.Unit.Kelvin   |
+| amount of substance       | `n`            | SI.Unit.Mole     |
+| luminous intensity        | `lv`           | SI.Unit.Candela  |
 
 ### Basic units
 
@@ -99,13 +99,13 @@ Getting all default quantities
 ```elixir
 iex(1)> SI.quantities
 [
-  m: SI.Quantity.Mass,
-  n: SI.Quantity.AmountOfSubstance,
-  t: SI.Quantity.Time,
-  T: SI.Quantity.ThermodynamicTemperature,
-  lv: SI.Quantity.LuminousIntensity,
-  l: SI.Quantity.Length,
-  I: SI.Quantity.ElectricCurrent
+  mass: SI.Quantity.Mass,
+  amount_of_substance: SI.Quantity.AmountOfSubstance,
+  time: SI.Quantity.Time,
+  thermodynamic_temperature: SI.Quantity.ThermodynamicTemperature,
+  luminous_intensity: SI.Quantity.LuminousIntensity,
+  length: SI.Quantity.Length,
+  electric_current: SI.Quantity.ElectricCurrent
 ]
 ```
 
@@ -114,7 +114,7 @@ Getting all default available modules grouped by quantity symbols
 ```elixir
 iex(1)> SI.units
 [
-  t: [
+  time: [
     s: SI.Unit.Second,
     Es: SI.Unit.Exasecond,
     Ps: SI.Unit.Petasecond,
@@ -133,7 +133,7 @@ iex(1)> SI.units
     fs: SI.Unit.Femtosecond,
     as: SI.Unit.Attosecond
   ],
-  T: [
+  thermodynamic_temperature: [
     K: SI.Unit.Kelvin,
     EK: SI.Unit.Exakelvin,
     PK: SI.Unit.Petakelvin,
@@ -152,7 +152,7 @@ iex(1)> SI.units
     fK: SI.Unit.Femtokelvin,
     aK: SI.Unit.Attokelvin
   ],
-  lv: [
+  luminous_intensity: [
     cd: SI.Unit.Candela,
     Ecd: SI.Unit.Exacandela,
     Pcd: SI.Unit.Petacandela,
@@ -171,7 +171,7 @@ iex(1)> SI.units
     fcd: SI.Unit.Femtocandela,
     acd: SI.Unit.Attocandela
   ],
-  l: [
+  length: [
     m: SI.Unit.Meter,
     Em: SI.Unit.Exameter,
     Pm: SI.Unit.Petameter,
@@ -190,7 +190,7 @@ iex(1)> SI.units
     fm: SI.Unit.Femtometer,
     am: SI.Unit.Attometer
   ],
-  I: [
+  electric_current: [
     A: SI.Unit.Ampere,
     EA: SI.Unit.Exaampere,
     PA: SI.Unit.Petaampere,
@@ -209,7 +209,7 @@ iex(1)> SI.units
     fA: SI.Unit.Femtoampere,
     aA: SI.Unit.Attoampere
   ],
-  n: [
+  amount_of_substance: [
     mol: SI.Unit.Mole,
     Emol: SI.Unit.Examole,
     Pmol: SI.Unit.Petamole,
@@ -228,7 +228,7 @@ iex(1)> SI.units
     fmol: SI.Unit.Femtomole,
     amol: SI.Unit.Attomole
   ],
-  m: [
+  mass: [
     g: SI.Unit.Gram,
     Eg: SI.Unit.Exagram,
     Pg: SI.Unit.Petagram,

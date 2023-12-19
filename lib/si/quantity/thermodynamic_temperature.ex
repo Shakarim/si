@@ -3,6 +3,6 @@ defmodule SI.Quantity.ThermodynamicTemperature do
 
   use SI.Quantity,
       name: "thermodynamic temperature",
-      symbol: :T,
+      symbol: "T",
       unit: SI.Unit.Kelvin
 end

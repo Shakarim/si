@@ -3,6 +3,6 @@ defmodule SI.Quantity.Mass do
 
   use SI.Quantity,
       name: "mass",
-      symbol: :m,
+      symbol: "m",
       unit: SI.Unit.Kilogram
 end

@@ -13,6 +13,8 @@ defmodule SI.Quantity do
 
       def name, do: @name
 
+      def name_atom, do: :"#{String.replace(@name, " ", "_")}"
+
       def symbol, do: @symbol
 
       def unit, do: @unit
