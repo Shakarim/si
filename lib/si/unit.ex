@@ -171,7 +171,7 @@ defmodule SI.Unit do
 
 
   @spec derivative_symbol(atom(), atom()) :: atom()
-  defp derivative_symbol(original_module, multiplier_module), do: :"#{multiplier_module.symbol()}#{original_module.symbol()}"
+  defp derivative_symbol(original_module, multiplier_module), do: "#{multiplier_module.symbol()}#{original_module.symbol()}"
 
   @spec derivative_name(atom(), atom()) :: binary()
   defp derivative_name(original_module, multiplier_module), do: "#{multiplier_module.name()}#{original_module.name()}"
