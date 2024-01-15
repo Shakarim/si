@@ -158,10 +158,10 @@ defmodule SI.Unit do
 
   @spec generate_module_variations(atom()) :: [{symbol :: atom(), module :: atom()}]
   def generate_module_variations(basic_module) do
-    basic = [{basic_module.symbol(), basic_module}]
+    basic = [{:"#{basic_module.name()}", basic_module}]
     derivatives = Enum.map(@multipliers, fn {_multiplier_symbol, multiplier_module} ->
       {
-        derivative_symbol(basic_module, multiplier_module),
+        :"#{derivative_name(basic_module, multiplier_module)}",
         unit_module_name(basic_module, multiplier_module)
       }
     end)

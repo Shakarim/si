@@ -12,7 +12,7 @@ by adding `si` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:si, "~> 1.4"}
+    {:si, "~> 1.5"}
   ]
 end
 ```
@@ -84,13 +84,13 @@ Basically `SI` provides 7 quantities and 7 basic units for them.
 
 | Name    | Symbol | Module             |
 |---------|--------|--------------------|
-| ampere  | `:A`   | `SI.Unit.Ampere`   |
-| candela | `:cd`  | `SI.Unit.Candela`  |
-| gram    | `:g`   | `SI.Unit.Gram`     |
-| kelvin  | `:K`   | `SI.Unit.Kelvin`   |
-| meter   | `:m`   | `SI.Unit.Meter`    |
-| mole    | `:mol` | `SI.Unit.Mole`     |
-| second  | `:s`   | `SI.Unit.Second`   |
+| ampere  | `A`    | `SI.Unit.Ampere`   |
+| candela | `cd`   | `SI.Unit.Candela`  |
+| gram    | `g`    | `SI.Unit.Gram`     |
+| kelvin  | `K`    | `SI.Unit.Kelvin`   |
+| meter   | `m`    | `SI.Unit.Meter`    |
+| mole    | `mol`  | `SI.Unit.Mole`     |
+| second  | `s`    | `SI.Unit.Second`   |
 
 ### Getting all default available modules
 
@@ -115,137 +115,137 @@ Getting all default available modules grouped by quantity symbols
 iex(1)> SI.units
 [
   time: [
-    s: SI.Unit.Second,
-    Es: SI.Unit.Exasecond,
-    Ps: SI.Unit.Petasecond,
-    Ts: SI.Unit.Terasecond,
-    Gs: SI.Unit.Gigasecond,
-    Ms: SI.Unit.Megasecond,
-    ks: SI.Unit.Kilosecond,
-    hs: SI.Unit.Hectosecond,
-    das: SI.Unit.Decasecond,
-    ds: SI.Unit.Decisecond,
-    cs: SI.Unit.Centisecond,
-    ms: SI.Unit.Millisecond,
-    us: SI.Unit.Microsecond,
-    ns: SI.Unit.Nanosecond,
-    ps: SI.Unit.Picosecond,
-    fs: SI.Unit.Femtosecond,
-    as: SI.Unit.Attosecond
+    second: SI.Unit.Second,
+    exasecond: SI.Unit.Exasecond,
+    petasecond: SI.Unit.Petasecond,
+    terasecond: SI.Unit.Terasecond,
+    gigasecond: SI.Unit.Gigasecond,
+    megasecond: SI.Unit.Megasecond,
+    kilosecond: SI.Unit.Kilosecond,
+    hectosecond: SI.Unit.Hectosecond,
+    decasecond: SI.Unit.Decasecond,
+    decisecond: SI.Unit.Decisecond,
+    centisecond: SI.Unit.Centisecond,
+    millisecond: SI.Unit.Millisecond,
+    microsecond: SI.Unit.Microsecond,
+    nanosecond: SI.Unit.Nanosecond,
+    picosecond: SI.Unit.Picosecond,
+    femtosecond: SI.Unit.Femtosecond,
+    attosecond: SI.Unit.Attosecond
   ],
   thermodynamic_temperature: [
-    K: SI.Unit.Kelvin,
-    EK: SI.Unit.Exakelvin,
-    PK: SI.Unit.Petakelvin,
-    TK: SI.Unit.Terakelvin,
-    GK: SI.Unit.Gigakelvin,
-    MK: SI.Unit.Megakelvin,
-    kK: SI.Unit.Kilokelvin,
-    hK: SI.Unit.Hectokelvin,
-    daK: SI.Unit.Decakelvin,
-    dK: SI.Unit.Decikelvin,
-    cK: SI.Unit.Centikelvin,
-    mK: SI.Unit.Millikelvin,
-    uK: SI.Unit.Microkelvin,
-    nK: SI.Unit.Nanokelvin,
-    pK: SI.Unit.Picokelvin,
-    fK: SI.Unit.Femtokelvin,
-    aK: SI.Unit.Attokelvin
+    kelvin: SI.Unit.Kelvin,
+    exakelvin: SI.Unit.Exakelvin,
+    petakelvin: SI.Unit.Petakelvin,
+    terakelvin: SI.Unit.Terakelvin,
+    gigakelvin: SI.Unit.Gigakelvin,
+    megakelvin: SI.Unit.Megakelvin,
+    kilokelvin: SI.Unit.Kilokelvin,
+    hectokelvin: SI.Unit.Hectokelvin,
+    decakelvin: SI.Unit.Decakelvin,
+    decikelvin: SI.Unit.Decikelvin,
+    centikelvin: SI.Unit.Centikelvin,
+    millikelvin: SI.Unit.Millikelvin,
+    microkelvin: SI.Unit.Microkelvin,
+    nanokelvin: SI.Unit.Nanokelvin,
+    picokelvin: SI.Unit.Picokelvin,
+    femtokelvin: SI.Unit.Femtokelvin,
+    attokelvin: SI.Unit.Attokelvin
   ],
   luminous_intensity: [
-    cd: SI.Unit.Candela,
-    Ecd: SI.Unit.Exacandela,
-    Pcd: SI.Unit.Petacandela,
-    Tcd: SI.Unit.Teracandela,
-    Gcd: SI.Unit.Gigacandela,
-    Mcd: SI.Unit.Megacandela,
-    kcd: SI.Unit.Kilocandela,
-    hcd: SI.Unit.Hectocandela,
-    dacd: SI.Unit.Decacandela,
-    dcd: SI.Unit.Decicandela,
-    ccd: SI.Unit.Centicandela,
-    mcd: SI.Unit.Millicandela,
-    ucd: SI.Unit.Microcandela,
-    ncd: SI.Unit.Nanocandela,
-    pcd: SI.Unit.Picocandela,
-    fcd: SI.Unit.Femtocandela,
-    acd: SI.Unit.Attocandela
+    candela: SI.Unit.Candela,
+    exacandela: SI.Unit.Exacandela,
+    petacandela: SI.Unit.Petacandela,
+    teracandela: SI.Unit.Teracandela,
+    gigacandela: SI.Unit.Gigacandela,
+    megacandela: SI.Unit.Megacandela,
+    kilocandela: SI.Unit.Kilocandela,
+    hectocandela: SI.Unit.Hectocandela,
+    decacandela: SI.Unit.Decacandela,
+    decicandela: SI.Unit.Decicandela,
+    centicandela: SI.Unit.Centicandela,
+    millicandela: SI.Unit.Millicandela,
+    microcandela: SI.Unit.Microcandela,
+    nanocandela: SI.Unit.Nanocandela,
+    picocandela: SI.Unit.Picocandela,
+    femtocandela: SI.Unit.Femtocandela,
+    attocandela: SI.Unit.Attocandela
   ],
   length: [
-    m: SI.Unit.Meter,
-    Em: SI.Unit.Exameter,
-    Pm: SI.Unit.Petameter,
-    Tm: SI.Unit.Terameter,
-    Gm: SI.Unit.Gigameter,
-    Mm: SI.Unit.Megameter,
-    km: SI.Unit.Kilometer,
-    hm: SI.Unit.Hectometer,
-    dam: SI.Unit.Decameter,
-    dm: SI.Unit.Decimeter,
-    cm: SI.Unit.Centimeter,
-    mm: SI.Unit.Millimeter,
-    um: SI.Unit.Micrometer,
-    nm: SI.Unit.Nanometer,
-    pm: SI.Unit.Picometer,
-    fm: SI.Unit.Femtometer,
-    am: SI.Unit.Attometer
+    meter: SI.Unit.Meter,
+    exameter: SI.Unit.Exameter,
+    petameter: SI.Unit.Petameter,
+    terameter: SI.Unit.Terameter,
+    gigameter: SI.Unit.Gigameter,
+    megameter: SI.Unit.Megameter,
+    kilometer: SI.Unit.Kilometer,
+    hectometer: SI.Unit.Hectometer,
+    decameter: SI.Unit.Decameter,
+    decimeter: SI.Unit.Decimeter,
+    centimeter: SI.Unit.Centimeter,
+    millimeter: SI.Unit.Millimeter,
+    micrometer: SI.Unit.Micrometer,
+    nanometer: SI.Unit.Nanometer,
+    picometer: SI.Unit.Picometer,
+    femtometer: SI.Unit.Femtometer,
+    attometer: SI.Unit.Attometer
   ],
   electric_current: [
-    A: SI.Unit.Ampere,
-    EA: SI.Unit.Exaampere,
-    PA: SI.Unit.Petaampere,
-    TA: SI.Unit.Teraampere,
-    GA: SI.Unit.Gigaampere,
-    MA: SI.Unit.Megaampere,
-    kA: SI.Unit.Kiloampere,
-    hA: SI.Unit.Hectoampere,
-    daA: SI.Unit.Decaampere,
-    dA: SI.Unit.Deciampere,
-    cA: SI.Unit.Centiampere,
-    mA: SI.Unit.Milliampere,
-    uA: SI.Unit.Microampere,
-    nA: SI.Unit.Nanoampere,
-    pA: SI.Unit.Picoampere,
-    fA: SI.Unit.Femtoampere,
-    aA: SI.Unit.Attoampere
+    ampere: SI.Unit.Ampere,
+    exaampere: SI.Unit.Exaampere,
+    petaampere: SI.Unit.Petaampere,
+    teraampere: SI.Unit.Teraampere,
+    gigaampere: SI.Unit.Gigaampere,
+    megaampere: SI.Unit.Megaampere,
+    kiloampere: SI.Unit.Kiloampere,
+    hectoampere: SI.Unit.Hectoampere,
+    decaampere: SI.Unit.Decaampere,
+    deciampere: SI.Unit.Deciampere,
+    centiampere: SI.Unit.Centiampere,
+    milliampere: SI.Unit.Milliampere,
+    microampere: SI.Unit.Microampere,
+    nanoampere: SI.Unit.Nanoampere,
+    picoampere: SI.Unit.Picoampere,
+    femtoampere: SI.Unit.Femtoampere,
+    attoampere: SI.Unit.Attoampere
   ],
   amount_of_substance: [
-    mol: SI.Unit.Mole,
-    Emol: SI.Unit.Examole,
-    Pmol: SI.Unit.Petamole,
-    Tmol: SI.Unit.Teramole,
-    Gmol: SI.Unit.Gigamole,
-    Mmol: SI.Unit.Megamole,
-    kmol: SI.Unit.Kilomole,
-    hmol: SI.Unit.Hectomole,
-    damol: SI.Unit.Decamole,
-    dmol: SI.Unit.Decimole,
-    cmol: SI.Unit.Centimole,
-    mmol: SI.Unit.Millimole,
-    umol: SI.Unit.Micromole,
-    nmol: SI.Unit.Nanomole,
-    pmol: SI.Unit.Picomole,
-    fmol: SI.Unit.Femtomole,
-    amol: SI.Unit.Attomole
+    mole: SI.Unit.Mole,
+    examole: SI.Unit.Examole,
+    petamole: SI.Unit.Petamole,
+    teramole: SI.Unit.Teramole,
+    gigamole: SI.Unit.Gigamole,
+    megamole: SI.Unit.Megamole,
+    kilomole: SI.Unit.Kilomole,
+    hectomole: SI.Unit.Hectomole,
+    decamole: SI.Unit.Decamole,
+    decimole: SI.Unit.Decimole,
+    centimole: SI.Unit.Centimole,
+    millimole: SI.Unit.Millimole,
+    micromole: SI.Unit.Micromole,
+    nanomole: SI.Unit.Nanomole,
+    picomole: SI.Unit.Picomole,
+    femtomole: SI.Unit.Femtomole,
+    attomole: SI.Unit.Attomole
   ],
   mass: [
-    g: SI.Unit.Gram,
-    Eg: SI.Unit.Exagram,
-    Pg: SI.Unit.Petagram,
-    Tg: SI.Unit.Teragram,
-    Gg: SI.Unit.Gigagram,
-    Mg: SI.Unit.Megagram,
-    kg: SI.Unit.Kilogram,
-    hg: SI.Unit.Hectogram,
-    dag: SI.Unit.Decagram,
-    dg: SI.Unit.Decigram,
-    cg: SI.Unit.Centigram,
-    mg: SI.Unit.Milligram,
-    ug: SI.Unit.Microgram,
-    ng: SI.Unit.Nanogram,
-    pg: SI.Unit.Picogram,
-    fg: SI.Unit.Femtogram,
-    ag: SI.Unit.Attogram
+    gram: SI.Unit.Gram,
+    exagram: SI.Unit.Exagram,
+    petagram: SI.Unit.Petagram,
+    teragram: SI.Unit.Teragram,
+    gigagram: SI.Unit.Gigagram,
+    megagram: SI.Unit.Megagram,
+    kilogram: SI.Unit.Kilogram,
+    hectogram: SI.Unit.Hectogram,
+    decagram: SI.Unit.Decagram,
+    decigram: SI.Unit.Decigram,
+    centigram: SI.Unit.Centigram,
+    milligram: SI.Unit.Milligram,
+    microgram: SI.Unit.Microgram,
+    nanogram: SI.Unit.Nanogram,
+    picogram: SI.Unit.Picogram,
+    femtogram: SI.Unit.Femtogram,
+    attogram: SI.Unit.Attogram
   ]
 ]
 ```
@@ -258,45 +258,45 @@ Every single basic unit by default has "prefixed" definitions.
 
 | Module              | Name      | Symbol | Multiplier       | 
 |---------------------|-----------|--------|------------------| 
-| `SI.Unit.Exagram`   | exagram   | `:Eg`  | 10<sup>18</sup>  |
-| `SI.Unit.Petagram`  | petagram  | `:Pg`  | 10<sup>15</sup>  |
-| `SI.Unit.Teragram`  | teragram  | `:Tg`  | 10<sup>12</sup>  |
-| `SI.Unit.Gigagram`  | gigagram  | `:Gg`  | 10<sup>9</sup>   |
-| `SI.Unit.Megagram`  | megagram  | `:Mg`  | 10<sup>6</sup>   |
-| `SI.Unit.Kilogram`  | kilogram  | `:kg`  | 10<sup>3</sup>   |
-| `SI.Unit.Hectogram` | hectogram | `:hg`  | 10<sup>2</sup>   |
-| `SI.Unit.Decagram`  | decagram  | `:dag` | 10<sup>1</sup>   |
-| `SI.Unit.Gram`      | gram      | `:dag` | 10<sup>0</sup>   |
-| `SI.Unit.Decigram`  | decigram  | `:dg`  | 10<sup>-1</sup>  |
-| `SI.Unit.Centigram` | centigram | `:cg`  | 10<sup>-2</sup>  |
-| `SI.Unit.Milligram` | milligram | `:mg`  | 10<sup>-3</sup>  |
-| `SI.Unit.Microgram` | microgram | `:ug`  | 10<sup>-6</sup>  |
-| `SI.Unit.Nanogram`  | nanogram  | `:ng`  | 10<sup>-9</sup>  |
-| `SI.Unit.Picogram`  | picogram  | `:pg`  | 10<sup>-12</sup> |
-| `SI.Unit.Femtogram` | femtogram | `:fg`  | 10<sup>-15</sup> |
-| `SI.Unit.Attogram`  | attogram  | `:ag`  | 10<sup>-18</sup> |
+| `SI.Unit.Exagram`   | exagram   | `Eg`   | 10<sup>18</sup>  |
+| `SI.Unit.Petagram`  | petagram  | `Pg`   | 10<sup>15</sup>  |
+| `SI.Unit.Teragram`  | teragram  | `Tg`   | 10<sup>12</sup>  |
+| `SI.Unit.Gigagram`  | gigagram  | `Gg`   | 10<sup>9</sup>   |
+| `SI.Unit.Megagram`  | megagram  | `Mg`   | 10<sup>6</sup>   |
+| `SI.Unit.Kilogram`  | kilogram  | `kg`   | 10<sup>3</sup>   |
+| `SI.Unit.Hectogram` | hectogram | `hg`   | 10<sup>2</sup>   |
+| `SI.Unit.Decagram`  | decagram  | `dag`  | 10<sup>1</sup>   |
+| `SI.Unit.Gram`      | gram      | `dag`  | 10<sup>0</sup>   |
+| `SI.Unit.Decigram`  | decigram  | `dg`   | 10<sup>-1</sup>  |
+| `SI.Unit.Centigram` | centigram | `cg`   | 10<sup>-2</sup>  |
+| `SI.Unit.Milligram` | milligram | `mg`   | 10<sup>-3</sup>  |
+| `SI.Unit.Microgram` | microgram | `ug`   | 10<sup>-6</sup>  |
+| `SI.Unit.Nanogram`  | nanogram  | `ng`   | 10<sup>-9</sup>  |
+| `SI.Unit.Picogram`  | picogram  | `pg`   | 10<sup>-12</sup> |
+| `SI.Unit.Femtogram` | femtogram | `fg`   | 10<sup>-15</sup> |
+| `SI.Unit.Attogram`  | attogram  | `ag`   | 10<sup>-18</sup> |
 
 Every "prefixed" unit has been created using multiplier module
 
 | Name  | Prefix | Multiplier | Module                |
 |-------|--------|------------|-----------------------|  
-| exa   | `:E`   | 18         | `SI.Multiplier.Exa`   |
-| peta  | `:P`   | 15         | `SI.Multiplier.Peta`  |
-| tera  | `:T`   | 12         | `SI.Multiplier.Tera`  |
-| giga  | `:G`   | 9          | `SI.Multiplier.Giga`  |
-| mega  | `:M`   | 6          | `SI.Multiplier.Mega`  |
-| kilo  | `:k`   | 3          | `SI.Multiplier.Kilo`  |
-| hecto | `:h`   | 2          | `SI.Multiplier.Hecto` |
-| deca  | `:da`  | 1          | `SI.Multiplier.Deca`  |
+| exa   | `E`    | 18         | `SI.Multiplier.Exa`   |
+| peta  | `P`    | 15         | `SI.Multiplier.Peta`  |
+| tera  | `T`    | 12         | `SI.Multiplier.Tera`  |
+| giga  | `G`    | 9          | `SI.Multiplier.Giga`  |
+| mega  | `M`    | 6          | `SI.Multiplier.Mega`  |
+| kilo  | `k`    | 3          | `SI.Multiplier.Kilo`  |
+| hecto | `h`    | 2          | `SI.Multiplier.Hecto` |
+| deca  | `da`   | 1          | `SI.Multiplier.Deca`  |
 | -     | -      | 0          | -                     |
-| deci  | `:d`   | -1         | `SI.Multiplier.Deci`  |
-| centi | `:c`   | -2         | `SI.Multiplier.Centi` |
-| milli | `:m`   | -3         | `SI.Multiplier.Milli` |
-| micro | `:u`   | -6         | `SI.Multiplier.Micro` |
-| nano  | `:n`   | -9         | `SI.Multiplier.Nano`  |
-| pico  | `:p`   | -12        | `SI.Multiplier.Pico`  |
-| femto | `:f`   | -15        | `SI.Multiplier.Femto` |
-| atto  | `:a`   | -18        | `SI.Multiplier.Atto`  |
+| deci  | `d`    | -1         | `SI.Multiplier.Deci`  |
+| centi | `c`    | -2         | `SI.Multiplier.Centi` |
+| milli | `m`    | -3         | `SI.Multiplier.Milli` |
+| micro | `u`    | -6         | `SI.Multiplier.Micro` |
+| nano  | `n`    | -9         | `SI.Multiplier.Nano`  |
+| pico  | `p`    | -12        | `SI.Multiplier.Pico`  |
+| femto | `f`    | -15        | `SI.Multiplier.Femto` |
+| atto  | `a`    | -18        | `SI.Multiplier.Atto`  |
 
 ## Docs
 
