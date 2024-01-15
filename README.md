@@ -12,7 +12,7 @@ by adding `si` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:si, "~> 1.5"}
+    {:si, "~> 1.5.1"}
   ]
 end
 ```
